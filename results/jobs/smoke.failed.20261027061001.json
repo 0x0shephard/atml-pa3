@@ -1,0 +1,11 @@
+{
+  "run_id": "smoke",
+  "status": "failed",
+  "error": "Command '['/usr/bin/python3', '-m', 'unittest', 'discover', '-s', 'tests']' returned non-zero exit status 1.",
+  "source_sha256": "c428f28d03516923130d3a252720b62ebd1573d2125c40d3c19116653fc8e46a",
+  "wall_clock_seconds": 83.89980506896973,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-smoke",
+  "gpu": true,
+  "finished": "2026-10-27T06:10:01.481355+05:00"
+}

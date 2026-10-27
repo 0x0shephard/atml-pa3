@@ -1,0 +1,10 @@
+{
+  "run_id": "t2_vlm",
+  "status": "complete",
+  "source_sha256": "3422c42ed4b445d5d4288d09416bc9866ebfc3d093df719326339b684d7b0ece",
+  "wall_clock_seconds": 7405.565190315247,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t2-vlm",
+  "gpu": true,
+  "finished": "2026-10-27T12:39:58.765402+05:00"
+}

@@ -1,0 +1,20 @@
+{
+  "questions": [
+    "test:943"
+  ],
+  "wall_seconds": 99.37524341900007,
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "tokenizers": "0.22.1",
+    "accelerate": "1.14.0",
+    "datasets": "3.6.0",
+    "lm_eval": "0.4.9.1",
+    "math-verify": "0.9.0"
+  },
+  "peak_memory_bytes": 6272967168,
+  "gpu": "Tesla T4",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+}

@@ -1,0 +1,8 @@
+base_config: configs/task1_base.yaml
+name: lora4
+method: lora
+learning_rate: 2.0e-4
+adapter:
+  rank: 4
+  alpha: 8
+  protect_k: 0

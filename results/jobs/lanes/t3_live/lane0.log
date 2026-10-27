@@ -1,0 +1,117 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:22<00:22, 22.20s/it]Fetching 2 files: 100%|██████████| 2/2 [00:22<00:00, 11.10s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:11<00:00,  5.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:11<00:00,  5.87s/it]
+live 1/1 test:943
+{
+ "single": {
+  "accuracy": 1.0,
+  "input_tokens": 106.0,
+  "output_tokens": 412.0,
+  "seconds": 22.116369213999974,
+  "truncation_rate": 0.0,
+  "extraction_rate": 1.0,
+  "final_answer_missing_rate": 0.0
+ },
+ "parallel": {
+  "accuracy": 1.0,
+  "input_tokens": 318.0,
+  "output_tokens": 1183.0,
+  "seconds": 60.83886541900006,
+  "truncation_rate": 0.0,
+  "extraction_rate": 1.0,
+  "final_answer_missing_rate": 0.0
+ },
+ "refinement": {
+  "accuracy": 1.0,
+  "input_tokens": 648.0,
+  "output_tokens": 710.0,
+  "seconds": 36.84166121099997,
+  "truncation_rate": 0.0,
+  "extraction_rate": 1.0,
+  "final_answer_missing_rate": 0.0,
+  "transitions": {
+   "W->C": 0,
+   "C->W": 0,
+   "C->C": 1,
+   "W->W": 0
+  }
+ }
+}
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.57s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.89s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.99s/it]
+live 1/50 test:943
+live 2/50 test:2688
+live 3/50 test:3504
+live 4/50 test:4335
+live 5/50 test:2460
+live 6/50 test:1324
+live 7/50 test:2340
+live 8/50 test:1577
+live 9/50 test:639
+live 10/50 test:2892
+live 11/50 test:4702
+live 12/50 test:1709
+live 13/50 test:4041
+live 14/50 test:2119
+live 15/50 test:2087
+live 16/50 test:4549
+live 17/50 test:2732
+live 18/50 test:1433
+live 19/50 test:3285
+live 20/50 test:29
+live 21/50 test:2948
+live 22/50 test:1997
+live 23/50 test:414
+live 24/50 test:1808
+live 25/50 test:4962
+live 26/50 test:274
+live 27/50 test:916
+live 28/50 test:534
+live 29/50 test:2177
+live 30/50 test:1043
+live 31/50 test:373
+live 32/50 test:1379
+live 33/50 test:196
+live 34/50 test:2134
+live 35/50 test:771
+live 36/50 test:3572
+live 37/50 test:2358
+live 38/50 test:2019
+live 39/50 test:4144
+live 40/50 test:3314
+live 41/50 test:3239
+live 42/50 test:4678
+live 43/50 test:1122
+live 44/50 test:4168
+live 45/50 test:1300
+live 46/50 test:4516
+live 47/50 test:1903
+live 48/50 test:1916
+live 49/50 test:3409
+live 50/50 test:3617
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/kaggle/working/pa3/task3_ttc/live.py", line 170, in <module>
+    main()
+    ~~~~^^
+  File "/kaggle/working/pa3/task3_ttc/live.py", line 125, in main
+    summarize(cfg, questions, ids, path, out, suffix="" if not args.limit else f"_limit{args.limit}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/working/pa3/task3_ttc/live.py", line 165, in summarize
+    atomic_json(out / f"summary{suffix}.json", {"strategies": summary, "per_question": rows})
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/working/pa3/common/runtime.py", line 61, in atomic_json
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False))
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib/python3.13/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.13/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.13/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type bool is not JSON serializable

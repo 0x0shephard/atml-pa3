@@ -1,0 +1,9 @@
+base_config: configs/task1_base.yaml
+name: l2sp
+method: full
+learning_rate: 2.0e-5
+train:
+  replace_checkpoint_in_place: true
+  lambda_l2sp: 1.0e-3
+  # FP32 theta0 does not fit beside Full FT on a 15 GB T4 (smoke: OOM); stream it from pinned host memory.
+  l2sp_reference_device: cpu

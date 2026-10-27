@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "smoke",
+      "account": "jonraza15",
+      "gpu": true,
+      "est_gpu_hours": 1.0,
+      "description": "Feasibility gate (attempt 2 verified LoRA-4, OPLoRA-16, Full FT, merged-adapter lm-eval, diagnostics and Task 2 data/features): L2-SP with host reference at max length, full short Task 2 curriculum and evaluation.",
+      "setup": [
+        [
+          "-m",
+          "task1_finetune.data"
+        ],
+        [
+          "-m",
+          "task2_vlm.prepare_data"
+        ],
+        [
+          "-m",
+          "task2_vlm.features"
+        ]
+      ],
+      "lanes": [
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_l2sp.yaml",
+            "--resume",
+            "--max-updates",
+            "3",
+            "--stress",
+            "--name",
+            "smoke_l2sp"
+          ]
+        ],
+        [
+          [
+            "-m",
+            "task2_vlm.train",
+            "--config",
+            "configs/task2_vlm.yaml",
+            "--max-updates",
+            "20",
+            "--name",
+            "smoke_vlm196",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task2_vlm.evaluate",
+            "--config",
+            "configs/task2_vlm.yaml",
+            "--name",
+            "smoke_vlm196"
+          ],
+          [
+            "-m",
+            "task2_vlm.train",
+            "--config",
+            "configs/task2_vlm49.yaml",
+            "--max-updates",
+            "5",
+            "--name",
+            "smoke_vlm49",
+            "--resume"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task1/smoke_l2sp_run.json",
+        "results/task2/smoke_vlm196/final_summary.json",
+        "results/task2/smoke_vlm49/smoke_vlm49_run.json"
+      ]
+    },
+    {
+      "id": "t1_full",
+      "account": "jonraza15",
+      "gpu": true,
+      "est_gpu_hours": 8.0,
+      "depends_on": [
+        "smoke"
+      ],
+      "setup": [
+        [
+          "-m",
+          "task1_finetune.data"
+        ]
+      ],
+      "lanes": [
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--stage",
+            "midpoint"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--stage",
+            "midpoint"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--stage",
+            "final"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--stage",
+            "final"
+          ]
+        ],
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_l2sp.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_l2sp.yaml",
+            "--stage",
+            "final"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_l2sp.yaml",
+            "--stage",
+            "final"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task1/full_ft_run.json",
+        "results/task1/l2sp_run.json",
+        "results/task1/eval/full_ft_midpoint/summary.json",
+        "results/task1/eval/full_ft_final/summary.json",
+        "results/task1/eval/l2sp_final/summary.json",
+        "results/task1/diagnostics/full_ft_midpoint.json",
+        "results/task1/diagnostics/full_ft_final.json",
+        "results/task1/diagnostics/l2sp_final.json"
+      ]
+    },
+    {
+      "id": "t1_lora",
+      "account": "dannyism11",
+      "gpu": true,
+      "est_gpu_hours": 6.0,
+      "depends_on": [],
+      "setup": [
+        [
+          "-m",
+          "task1_finetune.data"
+        ]
+      ],
+      "lanes": [
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_lora4.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_lora4.yaml",
+            "--stage",
+            "final"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_lora4.yaml",
+            "--stage",
+            "final"
+          ]
+        ],
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_lora16.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_lora16.yaml",
+            "--stage",
+            "final"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_lora16.yaml",
+            "--stage",
+            "final"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task1/lora4_run.json",
+        "results/task1/lora16_run.json",
+        "results/task1/eval/lora4_final/summary.json",
+        "results/task1/eval/lora16_final/summary.json",
+        "results/task1/diagnostics/lora4_final.json",
+        "results/task1/diagnostics/lora16_final.json"
+      ]
+    },
+    {
+      "id": "t1_oplora_baseline",
+      "account": "jonraza15",
+      "gpu": true,
+      "est_gpu_hours": 6.0,
+      "depends_on": [],
+      "setup": [
+        [
+          "-m",
+          "task1_finetune.data"
+        ]
+      ],
+      "lanes": [
+        [
+          [
+            "-m",
+            "task1_finetune.train",
+            "--config",
+            "configs/task1_oplora16.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_oplora16.yaml",
+            "--stage",
+            "final"
+          ],
+          [
+            "-m",
+            "task1_finetune.diagnostics",
+            "--config",
+            "configs/task1_oplora16.yaml",
+            "--stage",
+            "final"
+          ]
+        ],
+        [
+          [
+            "-m",
+            "task1_finetune.evaluate",
+            "--config",
+            "configs/task1_full_ft.yaml",
+            "--stage",
+            "baseline"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task1/oplora16_run.json",
+        "results/task1/eval/oplora16_final/summary.json",
+        "results/task1/diagnostics/oplora16_final.json",
+        "results/task1/eval/baseline/summary.json"
+      ]
+    },
+    {
+      "id": "t2_vlm",
+      "gpu": true,
+      "est_gpu_hours": 4.0,
+      "depends_on": [
+        "smoke"
+      ],
+      "setup": [
+        [
+          "-m",
+          "task2_vlm.prepare_data"
+        ],
+        [
+          "-m",
+          "task2_vlm.features"
+        ]
+      ],
+      "lanes": [
+        [
+          [
+            "-m",
+            "task2_vlm.train",
+            "--config",
+            "configs/task2_vlm.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task2_vlm.evaluate",
+            "--config",
+            "configs/task2_vlm.yaml"
+          ]
+        ],
+        [
+          [
+            "-m",
+            "task2_vlm.train",
+            "--config",
+            "configs/task2_vlm49.yaml",
+            "--resume"
+          ],
+          [
+            "-m",
+            "task2_vlm.evaluate",
+            "--config",
+            "configs/task2_vlm49.yaml"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task2/vlm196/final_summary.json",
+        "results/task2/vlm196/dev.jsonl",
+        "results/task2/vlm196/vlm196_run.json",
+        "results/task2/vlm49/final_summary.json"
+      ]
+    },
+    {
+      "id": "t3_offline",
+      "gpu": false,
+      "course_data": true,
+      "hold": true,
+      "est_gpu_hours": 0,
+      "description": "CPU-only; normally run locally with `python -m task3_ttc.offline` (kept here for reproducibility on Kaggle).",
+      "lanes": [
+        [
+          [
+            "-m",
+            "task3_ttc.load"
+          ],
+          [
+            "-m",
+            "task3_ttc.offline"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task3/math/selection_summary_eval.csv",
+        "results/task3/mathvista/selection_summary_eval.csv",
+        "results/task3/math/adaptive_summary.json",
+        "results/task3/mathvista/adaptive_summary.json"
+      ]
+    },
+    {
+      "id": "t3_live",
+      "gpu": true,
+      "course_data": true,
+      "est_gpu_hours": 4.0,
+      "depends_on": [],
+      "description": "Live MATH single/parallel/refinement on 50 held-out questions; a 1-question check runs first.",
+      "lanes": [
+        [
+          [
+            "-m",
+            "task3_ttc.live",
+            "--limit",
+            "1"
+          ],
+          [
+            "-m",
+            "task3_ttc.live"
+          ]
+        ]
+      ],
+      "artifacts": [
+        "results/task3/live/summary.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "t1_lora",
+  "status": "failed",
+  "error": "RuntimeError: Need exactly one previous output for this run (Kaggle rejects errored notebooks as kernel sources)",
+  "source_sha256": "70e9851ec80e9c15f3f444987a5fe4b22346033747cff5d9d0cdc0258102a3a6",
+  "wall_clock_seconds": 900.0,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t1-lora-attempt-2",
+  "gpu": true,
+  "finished": "2026-10-27T10:41:52.039197+05:00",
+  "wall_clock_estimated": true,
+  "note": "Corrected by hand: the autopilot re-read attempt 1's job_status from a reused download folder. The kernel failed before writing its own status; 900 s is the upper bound between submission and the failing poll."
+}

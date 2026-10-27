@@ -1,0 +1,1 @@
+{"run_id":"smoke","status":"failed","wall_clock_seconds":1900.17,"owner":"jonraza15","gpu":true,"finished":"2026-10-27T07:00:00+05:00","kernel":"jonraza15/pa3-smoke","error":"L2-SP OOM; Task 2 NaN logging"}

@@ -1,0 +1,11 @@
+{
+  "run_id": "t1_oplora_baseline",
+  "status": "complete",
+  "source_sha256": "30ae09cec5ee620089b33557dcfa938d881cd67382026f3a1c75e8067ebf8928",
+  "resume_source_sha256": "32ba941f2efc7b632c9b17cd974f465c9f0560faaa6532e73055c16fd8a88887",
+  "wall_clock_seconds": 2981.2241592407227,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-t1-oplora-baseline-attempt-2",
+  "gpu": true,
+  "finished": "2026-10-27T13:19:59.571281+05:00"
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "t1_lora",
+  "status": "complete",
+  "source_sha256": "01560809f6318cf3d6cd2239e6ce231a23b4dad4f585e6983ef4c12f903b72af",
+  "resume_source_sha256": "ff57e3e1d165ea611084e68d742a3d73defa4abf790ef249a162d02b8b870b71",
+  "wall_clock_seconds": 219.60271549224854,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t1-lora-attempt-4",
+  "gpu": true,
+  "finished": "2026-10-27T12:21:50.242652+05:00"
+}

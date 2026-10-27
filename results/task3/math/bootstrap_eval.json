@@ -1,0 +1,152 @@
+[
+  {
+    "a": "self_consistency",
+    "b": "first",
+    "n": 4,
+    "diff_pp": 4.85,
+    "ci95_pp": [
+      4.0621875,
+      5.6503125
+    ]
+  },
+  {
+    "a": "self_consistency",
+    "b": "first",
+    "n": 8,
+    "diff_pp": 7.4624999999999995,
+    "ci95_pp": [
+      6.375,
+      8.537812499999998
+    ]
+  },
+  {
+    "a": "self_consistency",
+    "b": "first",
+    "n": 32,
+    "diff_pp": 9.462499999999999,
+    "ci95_pp": [
+      8.0,
+      11.0375
+    ]
+  },
+  {
+    "a": "self_certainty",
+    "b": "logp",
+    "n": 4,
+    "diff_pp": 1.525,
+    "ci95_pp": [
+      0.5746875,
+      2.5
+    ]
+  },
+  {
+    "a": "self_certainty",
+    "b": "logp",
+    "n": 8,
+    "diff_pp": 2.6,
+    "ci95_pp": [
+      1.3371875000000002,
+      3.7503124999999997
+    ]
+  },
+  {
+    "a": "self_certainty",
+    "b": "logp",
+    "n": 32,
+    "diff_pp": 6.625,
+    "ci95_pp": [
+      4.246875000000001,
+      9.125
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_consistency",
+    "n": 4,
+    "diff_pp": 0.525,
+    "ci95_pp": [
+      -0.08749999999999997,
+      1.2253124999999998
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_consistency",
+    "n": 8,
+    "diff_pp": 1.0749999999999997,
+    "ci95_pp": [
+      0.5125,
+      1.6753124999999998
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_consistency",
+    "n": 32,
+    "diff_pp": 1.7624999999999997,
+    "ci95_pp": [
+      0.6868750000000001,
+      2.9124999999999996
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_certainty",
+    "n": 4,
+    "diff_pp": 0.9249999999999999,
+    "ci95_pp": [
+      0.5121875,
+      1.3875
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_certainty",
+    "n": 8,
+    "diff_pp": 2.725,
+    "ci95_pp": [
+      1.8746875,
+      3.7253125
+    ]
+  },
+  {
+    "a": "self_certainty:rwc",
+    "b": "self_certainty",
+    "n": 32,
+    "diff_pp": 4.925,
+    "ci95_pp": [
+      2.799375,
+      7.175
+    ]
+  },
+  {
+    "a": "shortest",
+    "b": "self_consistency",
+    "n": 4,
+    "diff_pp": -4.0125,
+    "ci95_pp": [
+      -5.0878125,
+      -3.0121875000000005
+    ]
+  },
+  {
+    "a": "shortest",
+    "b": "self_consistency",
+    "n": 8,
+    "diff_pp": -7.237500000000001,
+    "ci95_pp": [
+      -8.775,
+      -5.725
+    ]
+  },
+  {
+    "a": "shortest",
+    "b": "self_consistency",
+    "n": 32,
+    "diff_pp": -11.4125,
+    "ci95_pp": [
+      -14.125312499999998,
+      -8.985625000000002
+    ]
+  }
+]

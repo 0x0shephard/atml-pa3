@@ -1,0 +1,41 @@
+base_config: configs/base.yaml
+data:
+  train_examples: 40000
+  max_tokens: 2048
+  output: data/task1/metamath_train.jsonl
+  manifest: manifests/task1/train_selection.json
+  probes: manifests/task1/probe_ids.json
+  probe_per_task: 32
+train:
+  epochs: 1
+  updates: 1250
+  microbatch: 2
+  grad_accum: 16
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  weight_decay: 0.01
+  warmup_updates: 38
+  max_grad_norm: 1.0
+  gradient_checkpointing: true
+  checkpoint_updates: [312, 625, 937, 1250]
+  midpoint_update: 625
+  loss_chunk: 1024
+  lambda_l2sp: 0.0
+adapter:
+  targets: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  dropout: 0.05
+eval:
+  gsm8k_task: gsm8k_cot
+  likelihood_tasks: [hellaswag, boolq, arc_easy]
+  max_gen_toks: 1024
+  gen_batch_size: 32
+  loglik_batch_size: 8
+  qualitative_max_new_tokens: 512
+  qualitative_file: data/first_plot_questions.yaml
+diagnostics:
+  layers: [0, 13, 27]
+  module: down_proj
+  protect_k: 128
+results_dir: results/task1
+outputs_dir: outputs/task1
+remote_dir: remote/task1

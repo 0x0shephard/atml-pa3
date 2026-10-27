@@ -1,0 +1,3 @@
+training selection exists /kaggle/working/pa3/data/task1/metamath_train.jsonl
+`torch_dtype` is deprecated! Use `dtype` instead!
+{"checkpoint": {"update": 3, "examples_seen": 96, "bytes": 7153000921, "save_seconds": 16.8840753610001}}

@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Caches
+.cache/
+hf_cache/
+.huggingface/
+wandb/
+
+# Model weights, checkpoints and remote-only intermediates
+outputs/**/training_state.pt
+outputs/**/*.safetensors
+outputs/**/*.bin
+remote/
+checkpoints/
+cached/
+
+# Downloaded datasets and course data (raw data must not be committed)
+data/*
+!data/README.md
+course_data/*
+!course_data/README.md
+
+# Misc
+*.zip
+.DS_Store
+
+# Kaggle snapshots, downloaded jobs, credentials and local state
+kaggle_jobs/
+kaggle_downloads/
+.kaggle/
+.env
+*.credentials.json
+credentials.json
+kaggle.json
+
+# LaTeX intermediate files
+report/*.log
+report/*.aux
+report/*.out
+report/*.synctex.gz
+
+# Course handout (not ours to redistribute)
+ATML-PA3.pdf

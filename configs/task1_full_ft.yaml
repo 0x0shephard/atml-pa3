@@ -1,0 +1,7 @@
+base_config: configs/task1_base.yaml
+name: full_ft
+method: full
+learning_rate: 2.0e-5
+evaluate_midpoint: true
+train:
+  replace_checkpoint_in_place: true

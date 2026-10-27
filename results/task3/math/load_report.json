@@ -1,0 +1,50 @@
+{
+  "folder": "qwen25-math",
+  "rows": 32000,
+  "columns": [
+    "dataset",
+    "model",
+    "sample_id",
+    "rollout_id",
+    "question_text",
+    "generated_token_ids",
+    "n_generated_text_tokens",
+    "hit_max_new_tokens",
+    "generated_text",
+    "gold_answer",
+    "extracted_answer",
+    "logp",
+    "kl_u_p"
+  ],
+  "resolved": {
+    "dataset": "dataset",
+    "sample_id": "sample_id",
+    "rollout_id": "rollout_id",
+    "text": "generated_text",
+    "token_ids": "generated_token_ids",
+    "num_tokens": "n_generated_text_tokens",
+    "extracted": "extracted_answer",
+    "gold": "gold_answer",
+    "question": "question_text",
+    "logp": "logp",
+    "kl_u_p": "kl_u_p",
+    "attn_image": null,
+    "attn_prompt": null,
+    "attn_generated": null
+  },
+  "alignment": {
+    "checked": 32000,
+    "token_minus_measure": {
+      "0": 32000
+    },
+    "mismatch": 0
+  },
+  "questions": 1000,
+  "rollouts_per_question": [
+    32
+  ],
+  "scorer": {
+    "math-verify": "0.9.0",
+    "mathvista_rules": "official normalize_extracted_answer rules, option letters, numeric pre-cleaning v1"
+  }
+}

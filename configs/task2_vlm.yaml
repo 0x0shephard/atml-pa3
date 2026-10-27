@@ -1,0 +1,62 @@
+base_config: configs/base.yaml
+name: vlm196
+visual_tokens: 196
+data:
+  dir: data/task2
+  images_dir: remote/task2/images
+  features_dir: remote/task2/features
+  manifest: manifests/task2/selection.json
+  caption_train_images: 6000
+  captions_per_train_image: 3
+  caption_dev_images: 96
+  grounding_dev_pairs: {presence: 12, counting: 12}
+  grounding_test_pairs: {presence: 32, counting: 32}
+  grounding_pool_pairs: {presence: 8000, counting: 8000}
+  vqa_train_pairs: {"yes/no": 640, number: 256, other: 640}
+  vqa_dev_pairs: {"yes/no": 12, number: 8, other: 12}
+  vqa_test_pairs: {"yes/no": 36, number: 24, other: 36}
+  vqa_min_agreement: 8
+  presence_min_area_fraction: 0.02
+  counting_min_instance_area_fraction: 0.005
+  download_workers: 32
+prompts:
+  caption: Describe this image in one sentence.
+  short_answer_suffix: Answer the question using a single word or number.
+caps:
+  question: 80
+  caption_target: 64
+  short_answer_target: 16
+connector:
+  input_dim: 768
+  hidden_dim: 1024
+  output_dim: 1024
+  calibration_images: 512
+lora:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  targets: [q_proj, k_proj, v_proj, o_proj]
+train:
+  microbatch: 8
+  grad_accum: 2
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  warmup_fraction: 0.05
+  final_lr_fraction: 0.1
+  gradient_checkpointing: true
+  checkpoint_every: 250
+  stages:
+    - {name: caption_alignment, updates: 2250, connector_lr: 1.0e-3, lora_lr: null,
+       mixture: {caption: 1.0}}
+    - {name: visual_instruction, updates: 1500, connector_lr: 1.0e-4, lora_lr: 2.0e-5,
+       mixture: {presence: 0.5, counting: 0.25, caption: 0.25}}
+    - {name: natural_vqa, updates: 750, connector_lr: 5.0e-5, lora_lr: 1.0e-5,
+       mixture: {vqa: 0.7, presence: 0.1, counting: 0.1, caption: 0.1}}
+eval:
+  dev_every: 500
+  dev_batch_size: 16
+  generation_batch_size: 8
+  max_new_tokens: 16
+  bootstrap: 4000
+results_dir: results/task2
+outputs_dir: outputs/task2

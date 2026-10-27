@@ -1,0 +1,151 @@
+{
+  "name": "lora16",
+  "run_id": "101143def55eff603f153365022ba2693aeb1a9020d1657b09c08d8975fdc72b",
+  "status": "complete",
+  "config": {
+    "seed": 6304,
+    "revisions": {
+      "qwen3": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "metamathqa": "aa4f34d3d2d3231299b5b03d9b3e5a20da45aa18",
+      "gsm8k": "740312add88f781978c0658806c59bc2815b9866",
+      "siglip": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed"
+    },
+    "models": {
+      "qwen3": "Qwen/Qwen3-0.6B",
+      "siglip": "google/siglip-base-patch16-224"
+    },
+    "data": {
+      "train_examples": 40000,
+      "max_tokens": 2048,
+      "output": "data/task1/metamath_train.jsonl",
+      "manifest": "manifests/task1/train_selection.json",
+      "probes": "manifests/task1/probe_ids.json",
+      "probe_per_task": 32
+    },
+    "train": {
+      "epochs": 1,
+      "updates": 1250,
+      "microbatch": 2,
+      "grad_accum": 16,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "warmup_updates": 38,
+      "max_grad_norm": 1.0,
+      "gradient_checkpointing": true,
+      "checkpoint_updates": [
+        312,
+        625,
+        937,
+        1250
+      ],
+      "midpoint_update": 625,
+      "loss_chunk": 1024,
+      "lambda_l2sp": 0.0
+    },
+    "adapter": {
+      "targets": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "dropout": 0.05,
+      "rank": 16,
+      "alpha": 32,
+      "protect_k": 0
+    },
+    "eval": {
+      "gsm8k_task": "gsm8k_cot",
+      "likelihood_tasks": [
+        "hellaswag",
+        "boolq",
+        "arc_easy"
+      ],
+      "max_gen_toks": 1024,
+      "gen_batch_size": 32,
+      "loglik_batch_size": 32,
+      "qualitative_max_new_tokens": 512,
+      "qualitative_file": "data/first_plot_questions.yaml"
+    },
+    "diagnostics": {
+      "layers": [
+        0,
+        13,
+        27
+      ],
+      "module": "down_proj",
+      "protect_k": 128
+    },
+    "results_dir": "results/task1",
+    "outputs_dir": "outputs/task1",
+    "remote_dir": "remote/task1",
+    "name": "lora16",
+    "method": "lora",
+    "learning_rate": 0.0002
+  },
+  "source_commit": null,
+  "source_sha256": "cb3afd6daf5c44b34f8226d3d379a3de59ffbc9fed5b618875ceae095402f78e",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "tokenizers": "0.22.1",
+    "accelerate": "1.14.0",
+    "datasets": "3.6.0",
+    "lm_eval": "0.4.9.1",
+    "math-verify": "0.9.0"
+  },
+  "examples_sha256": "eb213253a519bbbdcbea0430b19248652cbea23dcafd3fb72894f5d2c0518f10",
+  "num_examples": 40000,
+  "checkpoints": [
+    {
+      "update": 312,
+      "examples_seen": 9984,
+      "bytes": 121602189,
+      "save_seconds": 0.23898297899995669
+    },
+    {
+      "update": 625,
+      "examples_seen": 20000,
+      "bytes": 121602189,
+      "save_seconds": 0.2844684880001296
+    },
+    {
+      "update": 937,
+      "examples_seen": 29984,
+      "bytes": 121602189,
+      "save_seconds": 0.2818394719997741
+    },
+    {
+      "update": 1250,
+      "examples_seen": 40000,
+      "bytes": 121602189,
+      "save_seconds": 0.2814661789998354
+    }
+  ],
+  "trainable_parameters": 10092544,
+  "training_seconds": 9339.59099869,
+  "skipped_updates": 0,
+  "updates": 1250,
+  "examples": 40000,
+  "final_artifact_bytes": 40412728,
+  "final_export_seconds": 0.0817084310001519,
+  "displacement_l2": {},
+  "overhead": {
+    "adapted_modules": 196,
+    "adapter_setup_seconds": 0.06516370700001062,
+    "export_seconds": 0.0817084310001519
+  },
+  "smoke": false,
+  "wall_clock_seconds": 9339.73599482,
+  "peak_vram_bytes": {
+    "0": 3492987392
+  }
+}

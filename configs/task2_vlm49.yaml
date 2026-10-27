@@ -1,0 +1,3 @@
+base_config: configs/task2_vlm.yaml
+name: vlm49
+visual_tokens: 49

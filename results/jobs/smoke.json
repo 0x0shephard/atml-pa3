@@ -1,0 +1,10 @@
+{
+  "run_id": "smoke",
+  "status": "complete",
+  "source_sha256": "32ba941f2efc7b632c9b17cd974f465c9f0560faaa6532e73055c16fd8a88887",
+  "wall_clock_seconds": 937.7018759250641,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-smoke",
+  "gpu": true,
+  "finished": "2026-10-27T07:49:31.176219+05:00"
+}

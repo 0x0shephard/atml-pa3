@@ -1,0 +1,180 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+dev {"update": 0, "stage": "caption_alignment", "seconds": 4.160142532999998, "caption_loss": 4.874994059403737, "grounding_dev": {"nll_correct": 3.849765107035637, "nll_complementary": 3.9653249929348626, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.11555988589922588}, "vqa_dev": {"nll_correct": 5.991002652794123, "nll_complementary": 6.104401335120201, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.11339868232607841}}
+/kaggle/working/pa3/task2_vlm/train.py:297: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+{"update": 50, "stage": "caption_alignment", "loss": 4.123210787773132}
+{"update": 100, "stage": "caption_alignment", "loss": 3.551240563392639}
+{"update": 150, "stage": "caption_alignment", "loss": 3.4168319702148438}
+{"update": 200, "stage": "caption_alignment", "loss": 3.1427494287490845}
+{"update": 250, "stage": "caption_alignment", "loss": 3.162482738494873}
+{"checkpoint": {"update": 250, "examples_seen": 4000, "bytes": 22172565, "save_seconds": 0.03565801200011265}}
+{"update": 300, "stage": "caption_alignment", "loss": 2.9536755084991455}
+{"update": 350, "stage": "caption_alignment", "loss": 3.161100745201111}
+{"update": 400, "stage": "caption_alignment", "loss": 3.0064276456832886}
+{"update": 450, "stage": "caption_alignment", "loss": 2.488097667694092}
+{"update": 500, "stage": "caption_alignment", "loss": 3.1066389083862305}
+{"checkpoint": {"update": 500, "examples_seen": 8000, "bytes": 22172629, "save_seconds": 0.03862699399996927}}
+dev {"update": 500, "stage": "caption_alignment", "seconds": 3.707599654000205, "caption_loss": 2.734253524492184, "grounding_dev": {"nll_correct": 3.2925411947071552, "nll_complementary": 3.361063332607349, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.06852213790019353}, "vqa_dev": {"nll_correct": 3.3618653109297156, "nll_complementary": 3.51946923637297, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.1576039254432544}}
+{"update": 550, "stage": "caption_alignment", "loss": 2.754140257835388}
+{"update": 600, "stage": "caption_alignment", "loss": 2.573838233947754}
+{"update": 650, "stage": "caption_alignment", "loss": 2.784181594848633}
+{"update": 700, "stage": "caption_alignment", "loss": 2.7621668577194214}
+{"update": 750, "stage": "caption_alignment", "loss": 2.3829190731048584}
+{"checkpoint": {"update": 750, "examples_seen": 12000, "bytes": 22172629, "save_seconds": 0.04099593499995535}}
+{"update": 800, "stage": "caption_alignment", "loss": 2.5060441493988037}
+{"update": 850, "stage": "caption_alignment", "loss": 2.759876012802124}
+{"update": 900, "stage": "caption_alignment", "loss": 2.8565688133239746}
+{"update": 950, "stage": "caption_alignment", "loss": 2.7360678911209106}
+{"update": 1000, "stage": "caption_alignment", "loss": 2.398996591567993}
+{"checkpoint": {"update": 1000, "examples_seen": 16000, "bytes": 22172629, "save_seconds": 0.040047788999800105}}
+dev {"update": 1000, "stage": "caption_alignment", "seconds": 3.719251776999954, "caption_loss": 2.546722618242105, "grounding_dev": {"nll_correct": 3.7635514636834464, "nll_complementary": 3.8442806551853814, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.08072919150193532}, "vqa_dev": {"nll_correct": 3.757166165392846, "nll_complementary": 4.101601262576878, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.3444350971840322}}
+{"update": 1050, "stage": "caption_alignment", "loss": 2.605278491973877}
+{"update": 1100, "stage": "caption_alignment", "loss": 2.3319432735443115}
+{"update": 1150, "stage": "caption_alignment", "loss": 2.3391460180282593}
+{"update": 1200, "stage": "caption_alignment", "loss": 2.690397262573242}
+{"update": 1250, "stage": "caption_alignment", "loss": 2.235339641571045}
+{"checkpoint": {"update": 1250, "examples_seen": 20000, "bytes": 22172629, "save_seconds": 0.048277907000056075}}
+{"update": 1300, "stage": "caption_alignment", "loss": 1.958130955696106}
+{"update": 1350, "stage": "caption_alignment", "loss": 2.5569911003112793}
+{"update": 1400, "stage": "caption_alignment", "loss": 2.4475746154785156}
+{"update": 1450, "stage": "caption_alignment", "loss": 2.4118595123291016}
+{"update": 1500, "stage": "caption_alignment", "loss": 2.238167881965637}
+{"checkpoint": {"update": 1500, "examples_seen": 24000, "bytes": 22172629, "save_seconds": 0.03759457299997848}}
+dev {"update": 1500, "stage": "caption_alignment", "seconds": 3.6728398600000673, "caption_loss": 2.4639427606016397, "grounding_dev": {"nll_correct": 3.964088166753451, "nll_complementary": 4.096086874604225, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.13199870785077414}, "vqa_dev": {"nll_correct": 4.028465531300753, "nll_complementary": 4.469905888196081, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.44144035689532757}}
+{"update": 1550, "stage": "caption_alignment", "loss": 2.6026883125305176}
+{"update": 1600, "stage": "caption_alignment", "loss": 2.465702533721924}
+{"update": 1650, "stage": "caption_alignment", "loss": 2.578614830970764}
+{"update": 1700, "stage": "caption_alignment", "loss": 2.907805323600769}
+{"update": 1750, "stage": "caption_alignment", "loss": 2.4683949947357178}
+{"checkpoint": {"update": 1750, "examples_seen": 28000, "bytes": 22172629, "save_seconds": 0.03633728600016184}}
+{"update": 1800, "stage": "caption_alignment", "loss": 2.476781487464905}
+{"update": 1850, "stage": "caption_alignment", "loss": 2.2179142236709595}
+{"update": 1900, "stage": "caption_alignment", "loss": 2.640472412109375}
+{"update": 1950, "stage": "caption_alignment", "loss": 2.4599698781967163}
+{"update": 2000, "stage": "caption_alignment", "loss": 2.746260166168213}
+{"checkpoint": {"update": 2000, "examples_seen": 32000, "bytes": 22172629, "save_seconds": 0.0389362720002282}}
+dev {"update": 2000, "stage": "caption_alignment", "seconds": 3.713874553000096, "caption_loss": 2.44160451926291, "grounding_dev": {"nll_correct": 4.089553207159042, "nll_complementary": 4.19469644377629, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.10514323661724727}, "vqa_dev": {"nll_correct": 4.202355532208458, "nll_complementary": 4.617195997852832, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.4148404656443745}}
+{"update": 2050, "stage": "caption_alignment", "loss": 2.4085514545440674}
+{"update": 2100, "stage": "caption_alignment", "loss": 2.4139864444732666}
+{"update": 2150, "stage": "caption_alignment", "loss": 2.0042555928230286}
+{"update": 2200, "stage": "caption_alignment", "loss": 2.24105167388916}
+{"update": 2250, "stage": "caption_alignment", "loss": 2.2843178510665894}
+{"checkpoint": {"update": 2250, "examples_seen": 36000, "bytes": 22172629, "save_seconds": 0.036563301000114734}}
+dev {"update": 2250, "stage": "caption_alignment", "seconds": 3.7103889060003894, "caption_loss": 2.4299841163059077, "grounding_dev": {"nll_correct": 4.052514844884475, "nll_complementary": 4.095320835709572, "nll_no_image": 3.3489827029407024, "delta_nll_swap": 0.042805990825096764}, "vqa_dev": {"nll_correct": 4.129246075404808, "nll_complementary": 4.56793761998415, "nll_no_image": 5.274030203931034, "delta_nll_swap": 0.438691544579342}}
+{"update": 2300, "stage": "visual_instruction", "loss": 0.5603487193584442}
+{"update": 2350, "stage": "visual_instruction", "loss": 1.3468219637870789}
+{"update": 2400, "stage": "visual_instruction", "loss": 0.2959684133529663}
+{"update": 2450, "stage": "visual_instruction", "loss": 0.6575127243995667}
+{"update": 2500, "stage": "visual_instruction", "loss": 0.36910536885261536}
+{"checkpoint": {"update": 2500, "examples_seen": 40000, "bytes": 77492227, "save_seconds": 0.17666585300003135}}
+dev {"update": 2500, "stage": "visual_instruction", "seconds": 3.768044852999992, "caption_loss": 2.456699331601461, "grounding_dev": {"nll_correct": 0.7827213984686144, "nll_complementary": 3.236822936994334, "nll_no_image": 1.4601959281911452, "delta_nll_swap": 2.4541015385257197}, "vqa_dev": {"nll_correct": 2.5088232654088642, "nll_complementary": 3.4026333642250393, "nll_no_image": 4.3350111353211105, "delta_nll_swap": 0.893810098816175}}
+{"update": 2550, "stage": "visual_instruction", "loss": 1.0794435739517212}
+{"update": 2600, "stage": "visual_instruction", "loss": 0.8341667652130127}
+{"update": 2650, "stage": "visual_instruction", "loss": 1.4607090950012207}
+{"update": 2700, "stage": "visual_instruction", "loss": 0.4657220321241766}
+{"update": 2750, "stage": "visual_instruction", "loss": 0.8936775326728821}
+{"checkpoint": {"update": 2750, "examples_seen": 44000, "bytes": 77492227, "save_seconds": 0.18302255700018577}}
+{"update": 2800, "stage": "visual_instruction", "loss": 1.0540642142295837}
+{"update": 2850, "stage": "visual_instruction", "loss": 0.14790342655032873}
+{"update": 2900, "stage": "visual_instruction", "loss": 0.47189539298415184}
+{"update": 2950, "stage": "visual_instruction", "loss": 0.8395850658416748}
+{"update": 3000, "stage": "visual_instruction", "loss": 1.0022589266300201}
+{"checkpoint": {"update": 3000, "examples_seen": 48000, "bytes": 77492227, "save_seconds": 0.1841864150001129}}
+dev {"update": 3000, "stage": "visual_instruction", "seconds": 3.7794279699996878, "caption_loss": 2.4196867644786835, "grounding_dev": {"nll_correct": 0.76852780389216, "nll_complementary": 3.937473127928873, "nll_no_image": 1.209373087932666, "delta_nll_swap": 3.168945324036713}, "vqa_dev": {"nll_correct": 2.4296498040457664, "nll_complementary": 3.293911469663726, "nll_no_image": 4.143328776350245, "delta_nll_swap": 0.8642616656179598}}
+{"update": 3050, "stage": "visual_instruction", "loss": 0.8330838084220886}
+{"update": 3100, "stage": "visual_instruction", "loss": 0.6428335346281528}
+{"update": 3150, "stage": "visual_instruction", "loss": 0.714624005369842}
+{"update": 3200, "stage": "visual_instruction", "loss": 0.13067226111888885}
+{"update": 3250, "stage": "visual_instruction", "loss": 0.6161938309669495}
+{"checkpoint": {"update": 3250, "examples_seen": 52000, "bytes": 77492227, "save_seconds": 0.17992107700001725}}
+{"update": 3300, "stage": "visual_instruction", "loss": 0.6269772052764893}
+{"update": 3350, "stage": "visual_instruction", "loss": 0.719997763633728}
+{"update": 3400, "stage": "visual_instruction", "loss": 0.23522356152534485}
+{"update": 3450, "stage": "visual_instruction", "loss": 1.2027392387390137}
+{"update": 3500, "stage": "visual_instruction", "loss": 0.12774392822757363}
+{"checkpoint": {"update": 3500, "examples_seen": 56000, "bytes": 77492227, "save_seconds": 0.18678348599996752}}
+dev {"update": 3500, "stage": "visual_instruction", "seconds": 3.7592249829999673, "caption_loss": 2.403536854311824, "grounding_dev": {"nll_correct": 0.8515416834087924, "nll_complementary": 4.448546920747806, "nll_no_image": 1.3051186192315072, "delta_nll_swap": 3.597005237339014}, "vqa_dev": {"nll_correct": 2.5348135289241327, "nll_complementary": 3.61773898176034, "nll_no_image": 4.318365105078556, "delta_nll_swap": 1.0829254528362071}}
+{"update": 3550, "stage": "visual_instruction", "loss": 1.049337849020958}
+{"update": 3600, "stage": "visual_instruction", "loss": 0.8099097162485123}
+{"update": 3650, "stage": "visual_instruction", "loss": 0.48832055926322937}
+{"update": 3700, "stage": "visual_instruction", "loss": 0.5465467870235443}
+{"update": 3750, "stage": "visual_instruction", "loss": 0.6994897723197937}
+{"checkpoint": {"update": 3750, "examples_seen": 60000, "bytes": 77492227, "save_seconds": 0.17061254300006112}}
+dev {"update": 3750, "stage": "visual_instruction", "seconds": 3.7324470650000876, "caption_loss": 2.4006122002998986, "grounding_dev": {"nll_correct": 0.9122881078774299, "nll_complementary": 4.534032883937471, "nll_no_image": 1.2815810748531173, "delta_nll_swap": 3.6217447760600407}, "vqa_dev": {"nll_correct": 2.50901847948262, "nll_complementary": 3.6026298586220946, "nll_no_image": 4.301274103112519, "delta_nll_swap": 1.0936113791394746}}
+{"update": 3800, "stage": "natural_vqa", "loss": 0.8389110267162323}
+{"update": 3850, "stage": "natural_vqa", "loss": 1.409685492515564}
+{"update": 3900, "stage": "natural_vqa", "loss": 1.7454569637775421}
+{"update": 3950, "stage": "natural_vqa", "loss": 1.6942998766899109}
+{"update": 4000, "stage": "natural_vqa", "loss": 0.4185476303100586}
+{"checkpoint": {"update": 4000, "examples_seen": 64000, "bytes": 77492227, "save_seconds": 0.18323345999988305}}
+dev {"update": 4000, "stage": "natural_vqa", "seconds": 3.803577242999836, "caption_loss": 2.4115795896699033, "grounding_dev": {"nll_correct": 0.7833742329094093, "nll_complementary": 2.5652752943957844, "nll_no_image": 1.0415698336437345, "delta_nll_swap": 1.7819010614863753}, "vqa_dev": {"nll_correct": 1.53484954230953, "nll_complementary": 2.3295251375529915, "nll_no_image": 2.7309404800180346, "delta_nll_swap": 0.7946755952434614}}
+{"update": 4050, "stage": "natural_vqa", "loss": 1.0810794830322266}
+{"update": 4100, "stage": "natural_vqa", "loss": 0.6889359951019287}
+{"update": 4150, "stage": "natural_vqa", "loss": 0.8925036489963531}
+{"update": 4200, "stage": "natural_vqa", "loss": 0.6294464468955994}
+{"update": 4250, "stage": "natural_vqa", "loss": 0.6965876221656799}
+{"checkpoint": {"update": 4250, "examples_seen": 68000, "bytes": 77492227, "save_seconds": 0.1769000659996891}}
+{"update": 4300, "stage": "natural_vqa", "loss": 0.7117430120706558}
+{"update": 4350, "stage": "natural_vqa", "loss": 0.5137006342411041}
+{"update": 4400, "stage": "natural_vqa", "loss": 0.9690077900886536}
+{"update": 4450, "stage": "natural_vqa", "loss": 0.450643926858902}
+{"update": 4500, "stage": "natural_vqa", "loss": 0.7840020060539246}
+{"checkpoint": {"update": 4500, "examples_seen": 72000, "bytes": 77492227, "save_seconds": 0.17688595999970858}}
+dev {"update": 4500, "stage": "natural_vqa", "seconds": 3.7575235610001982, "caption_loss": 2.420511843636632, "grounding_dev": {"nll_correct": 0.8056376508902758, "nll_complementary": 2.8837626414994397, "nll_no_image": 1.0370801243310173, "delta_nll_swap": 2.078124990609164}, "vqa_dev": {"nll_correct": 1.5302811201254372, "nll_complementary": 2.429449582414236, "nll_no_image": 2.6206216025166214, "delta_nll_swap": 0.8991684622887988}}
+`torch_dtype` is deprecated! Use `dtype` instead!
+{
+ "grounding_test": {
+  "correct": 0.6015625,
+  "complementary": 0.1953125,
+  "mismatched": 0.3984375,
+  "no_image": 0.3515625,
+  "advantage_vs_complementary": {
+   "mean": 0.40625,
+   "ci95": [
+    0.265625,
+    0.546875
+   ]
+  },
+  "advantage_vs_mismatched": {
+   "mean": 0.203125,
+   "ci95": [
+    0.109375,
+    0.2890625
+   ]
+  },
+  "advantage_vs_no_image": {
+   "mean": 0.25,
+   "ci95": [
+    0.1640625,
+    0.3359375
+   ]
+  }
+ },
+ "vqa_test": {
+  "correct": 0.5151041666666667,
+  "complementary": 0.32916666666666666,
+  "mismatched": 0.3510416666666667,
+  "no_image": 0.3494791666666666,
+  "advantage_vs_complementary": {
+   "mean": 0.1859375,
+   "ci95": [
+    0.0895703125,
+    0.2838541666666667
+   ]
+  },
+  "advantage_vs_mismatched": {
+   "mean": 0.16406249999999997,
+   "ci95": [
+    0.08385416666666667,
+    0.24947916666666667
+   ]
+  },
+  "advantage_vs_no_image": {
+   "mean": 0.165625,
+   "ci95": [
+    0.090625,
+    0.24322916666666664
+   ]
+  }
+ }
+}

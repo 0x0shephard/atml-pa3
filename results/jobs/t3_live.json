@@ -1,0 +1,12 @@
+{
+  "run_id": "t3_live",
+  "status": "complete",
+  "source_sha256": "9498eb5665cc02a70a898c7e590526db8ad298d52157016f9046338b64044a65",
+  "wall_clock_seconds": 0.0,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t3-live",
+  "gpu": true,
+  "recovered_from": "t3_live.failed.20261027100528.json",
+  "note": "All 50 questions x 5 calls were generated on Kaggle (calls.jsonl, run.json downloaded from the kernel output). The final summarize() step raised on a numpy bool in JSON; summary.json was recomputed locally from the unchanged calls.jsonl after casting correctness flags to bool. GPU time is counted in the failed receipt.",
+  "finished": "2026-10-27T10:08:03.892911+05:00"
+}

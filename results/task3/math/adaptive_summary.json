@@ -1,0 +1,79 @@
+{
+  "selected": {
+    "agreement": {
+      "tau": 0.625,
+      "gamma": null,
+      "dev_accuracy": 0.8160000000000001,
+      "dev_mean_cost": 7088.955499999999
+    },
+    "quality": {
+      "tau": 0.5,
+      "gamma": 0.0,
+      "dev_accuracy": 0.8115000000000001,
+      "dev_mean_cost": 5479.528499999999
+    }
+  },
+  "fixed32_dev_accuracy": 0.815,
+  "held_out": {
+    "agreement": {
+      "accuracy": 0.731375,
+      "mean_cost": 10138.771124999997,
+      "mean_rollouts": 11.823,
+      "stop_distribution": {
+        "4": 0.663,
+        "8": 0.058375,
+        "16": 0.01325,
+        "32": 0.265375
+      },
+      "incorrect_early_stops": 700,
+      "incorrect_early_stops_recoverable_at_32": 51,
+      "early_stop_rate": 0.734625
+    },
+    "quality": {
+      "accuracy": 0.7267500000000001,
+      "mean_cost": 7663.055375,
+      "mean_rollouts": 9.0075,
+      "stop_distribution": {
+        "4": 0.763625,
+        "8": 0.058125,
+        "16": 0.0135,
+        "32": 0.16475
+      },
+      "incorrect_early_stops": 1192,
+      "incorrect_early_stops_recoverable_at_32": 131,
+      "early_stop_rate": 0.83525
+    }
+  },
+  "fixed_sc_eval": [
+    {
+      "n": 1,
+      "accuracy": 0.63825,
+      "mean_tokens": 669.772625
+    },
+    {
+      "n": 2,
+      "accuracy": 0.63825,
+      "mean_tokens": 1339.8654999999999
+    },
+    {
+      "n": 4,
+      "accuracy": 0.68675,
+      "mean_tokens": 2679.694125
+    },
+    {
+      "n": 8,
+      "accuracy": 0.7128749999999999,
+      "mean_tokens": 5344.108499999999
+    },
+    {
+      "n": 16,
+      "accuracy": 0.726125,
+      "mean_tokens": 10677.74275
+    },
+    {
+      "n": 32,
+      "accuracy": 0.7328749999999999,
+      "mean_tokens": 21347.0175
+    }
+  ]
+}

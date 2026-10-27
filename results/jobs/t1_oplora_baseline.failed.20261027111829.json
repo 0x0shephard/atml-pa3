@@ -1,0 +1,11 @@
+{
+  "run_id": "t1_oplora_baseline",
+  "status": "failed",
+  "error": "Command '['/usr/bin/python3', '-m', 'scripts.run_lanes', 't1_oplora_baseline']' returned non-zero exit status 1.",
+  "source_sha256": "32ba941f2efc7b632c9b17cd974f465c9f0560faaa6532e73055c16fd8a88887",
+  "wall_clock_seconds": 14704.124771595001,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-t1-oplora-baseline",
+  "gpu": true,
+  "finished": "2026-10-27T11:18:29.175399+05:00"
+}

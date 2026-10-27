@@ -1,0 +1,4 @@
+strategy,accuracy,input_tokens,output_tokens,seconds,truncation_rate,extraction_rate,final_answer_missing_rate,transitions
+single,0.62,108.38,761.32,39.16566721522008,0.04,0.96,0.04,
+parallel,0.54,325.14,1859.52,94.70131949711987,0.16666666666666666,0.8333333333333334,0.22,
+refinement,0.58,889.62,1239.5,63.883118761079935,0.11,0.89,0.02,"{'W->C': 1, 'C->W': 0, 'C->C': 28, 'W->W': 21}"

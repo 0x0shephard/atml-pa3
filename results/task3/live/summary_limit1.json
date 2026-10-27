@@ -1,0 +1,71 @@
+{
+  "strategies": {
+    "single": {
+      "accuracy": 1.0,
+      "input_tokens": 106.0,
+      "output_tokens": 412.0,
+      "seconds": 22.116369213999974,
+      "truncation_rate": 0.0,
+      "extraction_rate": 1.0,
+      "final_answer_missing_rate": 0.0
+    },
+    "parallel": {
+      "accuracy": 1.0,
+      "input_tokens": 318.0,
+      "output_tokens": 1183.0,
+      "seconds": 60.83886541900006,
+      "truncation_rate": 0.0,
+      "extraction_rate": 1.0,
+      "final_answer_missing_rate": 0.0
+    },
+    "refinement": {
+      "accuracy": 1.0,
+      "input_tokens": 648.0,
+      "output_tokens": 710.0,
+      "seconds": 36.84166121099997,
+      "truncation_rate": 0.0,
+      "extraction_rate": 1.0,
+      "final_answer_missing_rate": 0.0,
+      "transitions": {
+        "W->C": 0,
+        "C->W": 0,
+        "C->C": 1,
+        "W->W": 0
+      }
+    }
+  },
+  "per_question": [
+    {
+      "qid": "test:943",
+      "single": {
+        "correct": true,
+        "answer": "14",
+        "input_tokens": 106,
+        "output_tokens": 412,
+        "seconds": 22.116369213999974,
+        "truncated_calls": 0,
+        "unextracted_calls": 0
+      },
+      "parallel": {
+        "correct": true,
+        "answer": "14",
+        "input_tokens": 318,
+        "output_tokens": 1183,
+        "seconds": 60.83886541900006,
+        "truncated_calls": 0,
+        "unextracted_calls": 0
+      },
+      "refinement": {
+        "correct": true,
+        "initial_correct": true,
+        "answer": "14",
+        "input_tokens": 648,
+        "output_tokens": 710,
+        "seconds": 36.84166121099997,
+        "truncated_calls": 0,
+        "unextracted_calls": 0
+      },
+      "transition": "C->C"
+    }
+  ]
+}

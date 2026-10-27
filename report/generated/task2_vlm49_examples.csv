@@ -1,0 +1,41 @@
+suite,type,pair_id,question,image,reference,pred_correct_image,pred_partner_image
+grounding_test,counting,test_counting_00000,How many airplanes can you see?,val:353981,2,3,2
+grounding_test,counting,test_counting_00000,How many airplanes can you see?,val:315672,3,2,3
+grounding_test,counting,test_counting_00001,How many oranges can you see?,val:461758,4,2,1
+grounding_test,counting,test_counting_00001,How many oranges can you see?,val:138549,1,1,2
+grounding_test,counting,test_counting_00003,How many backpacks can you see?,val:376667,2,1,1
+grounding_test,counting,test_counting_00003,How many backpacks can you see?,val:182523,3,1,1
+grounding_test,counting,test_counting_00004,How many mice can you see?,val:324914,1,1,1
+grounding_test,counting,test_counting_00004,How many mice can you see?,val:503826,2,1,1
+grounding_test,presence,test_presence_00000,Does this image contain a cat?,val:315467,yes,yes,no
+grounding_test,presence,test_presence_00000,Does this image contain a cat?,val:552510,no,no,yes
+grounding_test,presence,test_presence_00001,Does this image contain a surfboard?,val:578993,yes,yes,no
+grounding_test,presence,test_presence_00001,Does this image contain a surfboard?,val:193498,no,no,yes
+grounding_test,presence,test_presence_00002,Does this image contain a mouse?,val:554291,yes,no,no
+grounding_test,presence,test_presence_00002,Does this image contain a mouse?,val:184633,no,no,no
+grounding_test,presence,test_presence_00007,Does this image contain a cup?,val:371677,yes,no,no
+grounding_test,presence,test_presence_00007,Does this image contain a cup?,val:222440,no,no,no
+vqa_test,number,182923000_280888006,How many lines in the grass?,val:182923,3,1,4
+vqa_test,number,182923000_280888006,How many lines in the grass?,val:280888,2,4,1
+vqa_test,number,85157002_231568018,How many men are there?,val:85157,2,4,3
+vqa_test,number,85157002_231568018,How many men are there?,val:231568,4,3,4
+vqa_test,number,503197000_527961000,How many floors does this bus have?,val:527961,3,2,2
+vqa_test,number,503197000_527961000,How many floors does this bus have?,val:503197,1,2,2
+vqa_test,number,198717000_571275002,How many people are shown?,val:571275,1,1,1
+vqa_test,number,198717000_571275002,How many people are shown?,val:198717,2,1,1
+vqa_test,other,141760002_437205001,What food is this?,val:141760,donut,donut,banana
+vqa_test,other,141760002_437205001,What food is this?,val:437205,banana,banana,donut
+vqa_test,other,5385007_365095002,What game is being played?,val:365095,soccer,soccer,baseball
+vqa_test,other,5385007_365095002,What game is being played?,val:5385,baseball,baseball,soccer
+vqa_test,other,353817011_431234000,What color is the frame of the mirror?,val:431234,silver,white,white
+vqa_test,other,353817011_431234000,What color is the frame of the mirror?,val:353817,black,white,white
+vqa_test,other,30668004_515895002,Is the horse walking or galloping?,val:515895,galloping,galloping,galloping
+vqa_test,other,30668004_515895002,Is the horse walking or galloping?,val:30668,walking,galloping,galloping
+vqa_test,yes/no,280688001_576369002,Is there a top to keep the coffee from spilling?,val:576369,no,yes,no
+vqa_test,yes/no,280688001_576369002,Is there a top to keep the coffee from spilling?,val:280688,yes,no,yes
+vqa_test,yes/no,382307019_492970005,Is anyone present in this photo?,val:492970,no,yes,no
+vqa_test,yes/no,382307019_492970005,Is anyone present in this photo?,val:382307,yes,no,yes
+vqa_test,yes/no,522315005_539422001,Is the giraffe taller than the tree?,val:539422,no,no,no
+vqa_test,yes/no,522315005_539422001,Is the giraffe taller than the tree?,val:522315,yes,no,no
+vqa_test,yes/no,115626001_378163002,Is the man wearing a Santa suit?,val:378163,yes,no,no
+vqa_test,yes/no,115626001_378163002,Is the man wearing a Santa suit?,val:115626,no,no,no

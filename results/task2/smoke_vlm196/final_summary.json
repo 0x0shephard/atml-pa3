@@ -1,0 +1,331 @@
+{
+  "suites": {
+    "grounding_test": {
+      "correct": {
+        "n_questions": 128,
+        "n_pairs": 64,
+        "accuracy": 0.40625,
+        "accuracy_counting": 0.3125,
+        "accuracy_presence": 0.5,
+        "pair_accuracy": 0.0625,
+        "identical_answer_rate": 0.875,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.40625,
+        "mean_reference_nll": 1.2593798407469876,
+        "generation_seconds_per_answer": 0.03973706775781238,
+        "pair_accuracy_ci": {
+          "mean": 0.0625,
+          "ci95": [
+            0.015625,
+            0.125
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.40625,
+          "ci95": [
+            0.34375,
+            0.46875
+          ]
+        }
+      },
+      "complementary": {
+        "n_questions": 128,
+        "n_pairs": 64,
+        "accuracy": 0.40625,
+        "accuracy_counting": 0.3125,
+        "accuracy_presence": 0.5,
+        "pair_accuracy": 0.0625,
+        "identical_answer_rate": 0.875,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.40625,
+        "mean_reference_nll": 1.2823290475062095,
+        "generation_seconds_per_answer": 0.038400895117186806,
+        "pair_accuracy_ci": {
+          "mean": 0.0625,
+          "ci95": [
+            0.015625,
+            0.125
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.40625,
+          "ci95": [
+            0.34375,
+            0.46875
+          ]
+        }
+      },
+      "mismatched": {
+        "n_questions": 128,
+        "n_pairs": 64,
+        "accuracy": 0.3828125,
+        "accuracy_counting": 0.3125,
+        "accuracy_presence": 0.453125,
+        "pair_accuracy": 0.046875,
+        "identical_answer_rate": 0.859375,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.4296875,
+        "mean_reference_nll": 1.2475543081527576,
+        "generation_seconds_per_answer": 0.040473745257815,
+        "pair_accuracy_ci": {
+          "mean": 0.046875,
+          "ci95": [
+            0.0,
+            0.109375
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.3828125,
+          "ci95": [
+            0.3203125,
+            0.4453125
+          ]
+        }
+      },
+      "no_image": {
+        "n_questions": 128,
+        "n_pairs": 64,
+        "accuracy": 0.3984375,
+        "accuracy_counting": 0.3125,
+        "accuracy_presence": 0.484375,
+        "pair_accuracy": 0.0,
+        "identical_answer_rate": 1.0,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.3984375,
+        "mean_reference_nll": 1.5887723662890494,
+        "generation_seconds_per_answer": 0.016492051718751455,
+        "pair_accuracy_ci": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.3984375,
+          "ci95": [
+            0.34375,
+            0.4453125
+          ]
+        }
+      },
+      "advantage_vs_complementary": {
+        "accuracy": {
+          "mean": 0.0,
+          "ci95": [
+            -0.09375,
+            0.07851562500000142
+          ]
+        },
+        "nll": {
+          "mean": 0.022949206759221852,
+          "ci95": [
+            -0.04663391960202716,
+            0.0887481568963267
+          ]
+        }
+      },
+      "advantage_vs_mismatched": {
+        "accuracy": {
+          "mean": 0.0234375,
+          "ci95": [
+            -0.0390625,
+            0.0859375
+          ]
+        },
+        "nll": {
+          "mean": -0.011825532594230026,
+          "ci95": [
+            -0.06562055358081124,
+            0.03701678299839843
+          ]
+        }
+      },
+      "advantage_vs_no_image": {
+        "accuracy": {
+          "mean": 0.0078125,
+          "ci95": [
+            -0.0390625,
+            0.0546875
+          ]
+        },
+        "nll": {
+          "mean": 0.3293925255420618,
+          "ci95": [
+            0.27558721767272804,
+            0.38579041751654586
+          ]
+        }
+      }
+    },
+    "vqa_test": {
+      "correct": {
+        "n_questions": 192,
+        "n_pairs": 96,
+        "accuracy": 0.359375,
+        "accuracy_number": 0.4083333333333334,
+        "accuracy_other": 0.14722222222222223,
+        "accuracy_yes/no": 0.5388888888888889,
+        "pair_accuracy": 0.0625,
+        "identical_answer_rate": 0.78125,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.3333333333333333,
+        "mean_reference_nll": 1.9059143855702132,
+        "generation_seconds_per_answer": 0.042583253427084834,
+        "pair_accuracy_ci": {
+          "mean": 0.0625,
+          "ci95": [
+            0.020833333333333332,
+            0.11458333333333333
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.359375,
+          "ci95": [
+            0.29790364583333334,
+            0.4223958333333333
+          ]
+        }
+      },
+      "complementary": {
+        "n_questions": 192,
+        "n_pairs": 96,
+        "accuracy": 0.3598958333333333,
+        "accuracy_number": 0.3666666666666667,
+        "accuracy_other": 0.13333333333333333,
+        "accuracy_yes/no": 0.5819444444444444,
+        "pair_accuracy": 0.07291666666666667,
+        "identical_answer_rate": 0.78125,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.328125,
+        "mean_reference_nll": 1.91650793418133,
+        "generation_seconds_per_answer": 0.040671615348957836,
+        "pair_accuracy_ci": {
+          "mean": 0.07291666666666667,
+          "ci95": [
+            0.03125,
+            0.125
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.35989583333333336,
+          "ci95": [
+            0.29843749999999997,
+            0.42449218750000006
+          ]
+        }
+      },
+      "mismatched": {
+        "n_questions": 192,
+        "n_pairs": 96,
+        "accuracy": 0.3645833333333333,
+        "accuracy_number": 0.39375,
+        "accuracy_other": 0.15416666666666667,
+        "accuracy_yes/no": 0.5555555555555556,
+        "pair_accuracy": 0.08333333333333333,
+        "identical_answer_rate": 0.7291666666666666,
+        "empty_answer_rate": 0.005208333333333333,
+        "follows_partner_rate": 0.328125,
+        "mean_reference_nll": 1.9077261795367424,
+        "generation_seconds_per_answer": 0.04030638962499585,
+        "pair_accuracy_ci": {
+          "mean": 0.08333333333333333,
+          "ci95": [
+            0.03125,
+            0.14583333333333334
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.3645833333333333,
+          "ci95": [
+            0.3026041666666666,
+            0.42604166666666665
+          ]
+        }
+      },
+      "no_image": {
+        "n_questions": 192,
+        "n_pairs": 96,
+        "accuracy": 0.2432291666666667,
+        "accuracy_number": 0.3458333333333334,
+        "accuracy_other": 0.14722222222222223,
+        "accuracy_yes/no": 0.2708333333333333,
+        "pair_accuracy": 0.0,
+        "identical_answer_rate": 1.0,
+        "empty_answer_rate": 0.0,
+        "follows_partner_rate": 0.22916666666666666,
+        "mean_reference_nll": 2.816058843435409,
+        "generation_seconds_per_answer": 0.019952241093747602,
+        "pair_accuracy_ci": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "accuracy_ci": {
+          "mean": 0.2432291666666667,
+          "ci95": [
+            0.19010416666666666,
+            0.2974088541666667
+          ]
+        }
+      },
+      "advantage_vs_complementary": {
+        "accuracy": {
+          "mean": -0.0005208333333333361,
+          "ci95": [
+            -0.06772135416666666,
+            0.07083333333333333
+          ]
+        },
+        "nll": {
+          "mean": 0.010593548611116907,
+          "ci95": [
+            -0.036022386690213654,
+            0.0577108458179282
+          ]
+        }
+      },
+      "advantage_vs_mismatched": {
+        "accuracy": {
+          "mean": -0.005208333333333332,
+          "ci95": [
+            -0.05833333333333333,
+            0.049479166666666664
+          ]
+        },
+        "nll": {
+          "mean": 0.00181179396652927,
+          "ci95": [
+            -0.03844242983129031,
+            0.042800102815575274
+          ]
+        }
+      },
+      "advantage_vs_no_image": {
+        "accuracy": {
+          "mean": 0.11614583333333332,
+          "ci95": [
+            0.05885416666666667,
+            0.17709635416666672
+          ]
+        },
+        "nll": {
+          "mean": 0.9101444578651959,
+          "ci95": [
+            0.7034365484384277,
+            1.1144846689829138
+          ]
+        }
+      }
+    }
+  },
+  "peak_memory": {
+    "0": {
+      "allocated": 2058399744,
+      "reserved": 2132803584
+    }
+  },
+  "bootstrap_resamples": 4000
+}

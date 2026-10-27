@@ -1,0 +1,37 @@
+{
+  "quartile_gap_all": {
+    "logp": 0.020625,
+    "self_certainty": 0.03703125,
+    "shortest": 0.03703125,
+    "vision": 0.035,
+    "visconf": 0.07296875,
+    "visconf_token": 0.07140625
+  },
+  "quartile_gap_mixed": {
+    "logp": 0.02586206896551724,
+    "self_certainty": 0.046434169278996865,
+    "shortest": 0.046434169278996865,
+    "vision": 0.0438871473354232,
+    "visconf": 0.09149686520376175,
+    "visconf_token": 0.08953761755485894
+  },
+  "mixed_questions": 638,
+  "length_correctness_spearman_mixed": {
+    "mean": -0.0438742782325783,
+    "n": 638
+  },
+  "confidence_vision_corr": {
+    "rollout_mean": -0.2106680740611772,
+    "question_mean": -0.21099388018711665,
+    "question_median": -0.2115446326639862,
+    "question_q25_q75": [
+      -0.3055210903113726,
+      -0.09386758834557993
+    ],
+    "rollouts": 25572
+  },
+  "tokenwise_minus_rollout_fusion": {
+    "mean_cov": -0.0022433811420689005,
+    "mean_abs_cov": 0.002640402064444817
+  }
+}

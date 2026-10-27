@@ -1,0 +1,11 @@
+# Kaggle accounts used for private PA3 jobs. Credentials are never stored here:
+# profile: null uses ~/.kaggle/credentials.json; otherwise a directory holding that
+# account's credentials.json (relative to the repo root). This file is not uploaded.
+accounts:
+  jonraza15:
+    profile: null
+  dannyism11:
+    profile: ../PA2/.kaggle-friend
+weekly_gpu_hours: 30
+# Private dataset created on each account from course_data/ by scripts/upload_course_data.py.
+course_dataset: atml-pa3-data

@@ -1,0 +1,58 @@
+base_config: configs/base.yaml
+datasets:
+  math:
+    folder_hint: [qwen25-math]
+    kind: math
+  mathvista:
+    folder_hint: [qwen25vl-mathvista]
+    kind: mathvista
+# Logical field -> candidate column names in the supplied parquet files (first match wins).
+# Names from the supplied README.MD; `python -m task3_ttc.load --inspect` prints the schema.
+schema:
+  dataset: [dataset]
+  sample_id: [sample_id]
+  rollout_id: [rollout_id]
+  text: [generated_text, text]
+  token_ids: [generated_token_ids, token_ids]
+  # Retained response length (stop tokens excluded); the generated-token cost unit.
+  num_tokens: [n_generated_text_tokens, num_tokens]
+  extracted: [extracted_answer]
+  gold: [gold_answer]
+  question: [question_text, problem]
+  logp: [logp]
+  kl_u_p: [kl_u_p]
+  attn_image: [img_attn_total]
+  attn_prompt: [prompt_text_attn_total]
+  attn_generated: [generated_text_attn_total]
+mathvista_metadata:
+  hf_dataset: AI4Math/MathVista
+  split: testmini
+splits:
+  dev_questions: 200
+  live_questions: 50
+offline:
+  budgets: [1, 2, 4, 8, 16, 32]
+  orders: 10
+  bootstrap: 1000
+adaptive:
+  checkpoints: [4, 8, 16]
+  max_candidates: 32
+  taus: [0.5, 0.625, 0.75, 0.875, 1.0]
+  gammas: [0.0, 0.1, 0.25, 0.5]
+  tolerance_pp: 1.0
+live:
+  model: Qwen/Qwen2.5-3B-Instruct
+  # Pinned in the supplied README.MD (same revision as the stored MATH rollouts).
+  revision: aa8e72537993ba99e69dfaafa59ed015b17504d1
+  system: You are a helpful assistant.
+  instruction: Think step by step inside <think> </think> tags, then give your final answer inside \boxed{}.
+  review: Review the solution above. Identify and correct any errors; if it is correct, retain its answer. Give your final answer inside \boxed{}.
+  temperature: 0.7
+  top_p: 0.8
+  top_k: 20
+  repetition_penalty: 1.0
+  single_tokens: 3072
+  parallel_tokens: 1024
+  parallel_samples: 3
+  revision_tokens: 2048
+results_dir: results/task3

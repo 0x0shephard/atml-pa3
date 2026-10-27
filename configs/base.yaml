@@ -1,0 +1,9 @@
+seed: 6304
+revisions:
+  qwen3: c1899de289a04d12100db370d81485cdf75e47ca
+  metamathqa: aa4f34d3d2d3231299b5b03d9b3e5a20da45aa18
+  gsm8k: 740312add88f781978c0658806c59bc2815b9866
+  siglip: 7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed
+models:
+  qwen3: Qwen/Qwen3-0.6B
+  siglip: google/siglip-base-patch16-224

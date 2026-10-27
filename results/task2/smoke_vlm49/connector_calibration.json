@@ -1,0 +1,8 @@
+{
+  "rule": "Rule: fixed scalar s = RMS(text embeddings of training-prompt tokens) / RMS(initial connector\noutputs on training images), so visual tokens enter at the scale of text tokens.",
+  "text_rms": 0.02588677778840065,
+  "visual_rms_before": 0.36326175928115845,
+  "scale": 0.07126204669475555,
+  "images": 494,
+  "text_tokens": 16727
+}

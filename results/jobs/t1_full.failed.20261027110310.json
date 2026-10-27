@@ -1,0 +1,11 @@
+{
+  "run_id": "t1_full",
+  "status": "failed",
+  "error": "Command '['/usr/bin/python3', '-m', 'scripts.run_lanes', 't1_full']' returned non-zero exit status 1.",
+  "source_sha256": "3422c42ed4b445d5d4288d09416bc9866ebfc3d093df719326339b684d7b0ece",
+  "wall_clock_seconds": 11301.707352399826,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-t1-full",
+  "gpu": true,
+  "finished": "2026-10-27T11:03:10.787452+05:00"
+}

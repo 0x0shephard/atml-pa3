@@ -1,0 +1,11 @@
+{
+  "run_id": "t1_full",
+  "status": "complete",
+  "source_sha256": "30ae09cec5ee620089b33557dcfa938d881cd67382026f3a1c75e8067ebf8928",
+  "resume_source_sha256": null,
+  "wall_clock_seconds": 13146.759282112122,
+  "owner": "jonraza15",
+  "kernel": "jonraza15/pa3-t1-full-attempt-2",
+  "gpu": true,
+  "finished": "2026-10-27T15:36:24.092162+05:00"
+}

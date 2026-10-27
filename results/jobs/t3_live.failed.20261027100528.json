@@ -1,0 +1,11 @@
+{
+  "run_id": "t3_live",
+  "status": "failed",
+  "error": "Command '['/usr/bin/python3', '-m', 'scripts.run_lanes', 't3_live']' returned non-zero exit status 1.",
+  "source_sha256": "9498eb5665cc02a70a898c7e590526db8ad298d52157016f9046338b64044a65",
+  "wall_clock_seconds": 8529.203117370605,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t3-live",
+  "gpu": true,
+  "finished": "2026-10-27T10:05:28.998269+05:00"
+}

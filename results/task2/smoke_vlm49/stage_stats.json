@@ -1,0 +1,20 @@
+{
+  "caption_alignment": {
+    "trainable_parameters": 1837056,
+    "updates": 5,
+    "seconds": 3.24101739799994,
+    "peak_memory_bytes": 1501247488
+  },
+  "visual_instruction": {
+    "trainable_parameters": 6424576,
+    "updates": 5,
+    "seconds": 3.4792349539998213,
+    "peak_memory_bytes": 1473356288
+  },
+  "natural_vqa": {
+    "trainable_parameters": 6424576,
+    "updates": 5,
+    "seconds": 3.528498506999995,
+    "peak_memory_bytes": 1432702976
+  }
+}

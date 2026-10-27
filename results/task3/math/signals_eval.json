@@ -1,0 +1,17 @@
+{
+  "quartile_gap_all": {
+    "logp": 0.07859375,
+    "self_certainty": 0.12015625,
+    "shortest": 0.04578125
+  },
+  "quartile_gap_mixed": {
+    "logp": 0.1343482905982906,
+    "self_certainty": 0.20539529914529914,
+    "shortest": 0.07825854700854701
+  },
+  "mixed_questions": 468,
+  "length_correctness_spearman_mixed": {
+    "mean": -0.07663888438067622,
+    "n": 468
+  }
+}

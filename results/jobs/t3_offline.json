@@ -1,0 +1,12 @@
+{
+  "run_id": "t3_offline",
+  "status": "complete",
+  "source_sha256": "01560809f6318cf3d6cd2239e6ce231a23b4dad4f585e6983ef4c12f903b72af",
+  "wall_clock_seconds": 0.0,
+  "owner": "local",
+  "kernel": null,
+  "gpu": false,
+  "machine": "Darwin arm64 (CPU), Python 3.12.14",
+  "note": "Offline Task 3 analysis (task3_ttc.load, task3_ttc.offline) run locally on CPU from course_data/; uses no GPU, so it is not counted against Kaggle quota. source_sha256 is the snapshot at receipt time; task3_ttc offline code has not changed since the run (only live.py's summary JSON fix).",
+  "finished": "2026-10-27T12:41:20.821676+05:00"
+}

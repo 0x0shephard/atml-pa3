@@ -1,0 +1,12 @@
+{
+  "run_id": "t1_lora",
+  "status": "failed",
+  "error": "Command '['/usr/bin/python3', '-m', 'scripts.run_lanes', 't1_lora']' returned non-zero exit status 1.",
+  "source_sha256": "ff57e3e1d165ea611084e68d742a3d73defa4abf790ef249a162d02b8b870b71",
+  "resume_source_sha256": "32ba941f2efc7b632c9b17cd974f465c9f0560faaa6532e73055c16fd8a88887",
+  "wall_clock_seconds": 2741.752347946167,
+  "owner": "dannyism11",
+  "kernel": "dannyism11/pa3-t1-lora-attempt-3",
+  "gpu": true,
+  "finished": "2026-10-27T11:48:56.645942+05:00"
+}

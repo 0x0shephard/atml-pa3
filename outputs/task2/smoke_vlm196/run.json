@@ -1,0 +1,215 @@
+{
+  "name": "smoke_vlm196",
+  "run_id": "c0e3a5e66f1ba7ee8317474c0210f160b774f31abd94ff7c62433cbea574ebef",
+  "status": "complete",
+  "config": {
+    "seed": 6304,
+    "revisions": {
+      "qwen3": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "metamathqa": "aa4f34d3d2d3231299b5b03d9b3e5a20da45aa18",
+      "gsm8k": "740312add88f781978c0658806c59bc2815b9866",
+      "siglip": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed"
+    },
+    "models": {
+      "qwen3": "Qwen/Qwen3-0.6B",
+      "siglip": "google/siglip-base-patch16-224"
+    },
+    "name": "smoke_vlm196",
+    "visual_tokens": 196,
+    "data": {
+      "dir": "data/task2",
+      "images_dir": "remote/task2/images",
+      "features_dir": "remote/task2/features",
+      "manifest": "manifests/task2/selection.json",
+      "caption_train_images": 6000,
+      "captions_per_train_image": 3,
+      "caption_dev_images": 96,
+      "grounding_dev_pairs": {
+        "presence": 12,
+        "counting": 12
+      },
+      "grounding_test_pairs": {
+        "presence": 32,
+        "counting": 32
+      },
+      "grounding_pool_pairs": {
+        "presence": 8000,
+        "counting": 8000
+      },
+      "vqa_train_pairs": {
+        "yes/no": 640,
+        "number": 256,
+        "other": 640
+      },
+      "vqa_dev_pairs": {
+        "yes/no": 12,
+        "number": 8,
+        "other": 12
+      },
+      "vqa_test_pairs": {
+        "yes/no": 36,
+        "number": 24,
+        "other": 36
+      },
+      "vqa_min_agreement": 8,
+      "presence_min_area_fraction": 0.02,
+      "counting_min_instance_area_fraction": 0.005,
+      "download_workers": 32
+    },
+    "prompts": {
+      "caption": "Describe this image in one sentence.",
+      "short_answer_suffix": "Answer the question using a single word or number."
+    },
+    "caps": {
+      "question": 80,
+      "caption_target": 64,
+      "short_answer_target": 16
+    },
+    "connector": {
+      "input_dim": 768,
+      "hidden_dim": 1024,
+      "output_dim": 1024,
+      "calibration_images": 512
+    },
+    "lora": {
+      "rank": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "targets": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ]
+    },
+    "train": {
+      "microbatch": 8,
+      "grad_accum": 2,
+      "weight_decay": 0.01,
+      "max_grad_norm": 1.0,
+      "warmup_fraction": 0.05,
+      "final_lr_fraction": 0.1,
+      "gradient_checkpointing": true,
+      "checkpoint_every": 20,
+      "stages": [
+        {
+          "name": "caption_alignment",
+          "updates": 20,
+          "connector_lr": 0.001,
+          "lora_lr": null,
+          "mixture": {
+            "caption": 1.0
+          }
+        },
+        {
+          "name": "visual_instruction",
+          "updates": 20,
+          "connector_lr": 0.0001,
+          "lora_lr": 2e-05,
+          "mixture": {
+            "presence": 0.5,
+            "counting": 0.25,
+            "caption": 0.25
+          }
+        },
+        {
+          "name": "natural_vqa",
+          "updates": 20,
+          "connector_lr": 5e-05,
+          "lora_lr": 1e-05,
+          "mixture": {
+            "vqa": 0.7,
+            "presence": 0.1,
+            "counting": 0.1,
+            "caption": 0.1
+          }
+        }
+      ]
+    },
+    "eval": {
+      "dev_every": 20,
+      "dev_batch_size": 16,
+      "generation_batch_size": 8,
+      "max_new_tokens": 16,
+      "bootstrap": 4000
+    },
+    "results_dir": "results/task2",
+    "outputs_dir": "outputs/task2"
+  },
+  "source_commit": null,
+  "source_sha256": "cb3afd6daf5c44b34f8226d3d379a3de59ffbc9fed5b618875ceae095402f78e",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "tokenizers": "0.22.1",
+    "accelerate": "1.14.0",
+    "datasets": "3.6.0",
+    "lm_eval": "0.4.9.1",
+    "math-verify": "0.9.0"
+  },
+  "examples_sha256": "3bbd42771dd8a977c97515ac346f11795ec35f8845b1c08ecde51de7a69452f7",
+  "num_examples": 35536,
+  "checkpoints": [
+    {
+      "update": 20,
+      "examples_seen": 320,
+      "bytes": 22172565,
+      "save_seconds": 0.03495827500000814
+    },
+    {
+      "update": 40,
+      "examples_seen": 640,
+      "bytes": 77492227,
+      "save_seconds": 0.17487200000005032
+    },
+    {
+      "update": 60,
+      "examples_seen": 960,
+      "bytes": 77492227,
+      "save_seconds": 1.6359536580000622
+    }
+  ],
+  "stage_stats": {
+    "caption_alignment": {
+      "trainable_parameters": 1837056,
+      "updates": 20,
+      "seconds": 24.803981575999956,
+      "peak_memory_bytes": 1595399168
+    },
+    "visual_instruction": {
+      "trainable_parameters": 6424576,
+      "updates": 20,
+      "seconds": 27.014694276,
+      "peak_memory_bytes": 1667989504
+    },
+    "natural_vqa": {
+      "trainable_parameters": 6424576,
+      "updates": 20,
+      "seconds": 28.70857726500003,
+      "peak_memory_bytes": 1608695296
+    }
+  },
+  "mixture_counts": {
+    "caption_alignment": {
+      "caption": 160
+    },
+    "visual_instruction": {
+      "presence": 84,
+      "counting": 37,
+      "caption": 39
+    },
+    "natural_vqa": {
+      "vqa": 121,
+      "counting": 14,
+      "presence": 12,
+      "caption": 13
+    }
+  },
+  "smoke": true,
+  "example_presentations": 960,
+  "wall_clock_seconds": 114.84390730599989,
+  "peak_vram_bytes": {
+    "0": 1608695296
+  }
+}
