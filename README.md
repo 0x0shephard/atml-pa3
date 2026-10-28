@@ -56,7 +56,7 @@ python -m task3_ttc.live        # needs live.revision set from the supplied READ
 
 ## Kaggle execution (two accounts)
 
-- **Accounts:** `configs/kaggle_accounts.yaml` lists each account and its credential profile directory. `null` means `~/.kaggle`. The file holds no credentials and is never uploaded.
+- **Accounts:** `configs/kaggle_accounts.yaml` lists each account and its credential profile directory. `null` means `~/.kaggle`. The file holds no credentials and is left out of the Kaggle source snapshot.
 - **Credential isolation:** for non-default accounts, the CLI wrapper `scripts/kaggle_profile_cli.py` redirects OAuth token refreshes into that account's profile.
 - **Job manifest:** `experiments/runs.json` defines each job:
   - setup commands, then one lane per GPU;
@@ -70,16 +70,19 @@ python -m task3_ttc.live        # needs live.revision set from the supplied READ
 python -m scripts.kaggle_runner list
 python -m scripts.kaggle_runner quota                 # GPU-hour ledger per account / ISO week
 python -m scripts.kaggle_autopilot --once --only smoke
-python -m scripts.kaggle_autopilot                    # hourly: submit, poll, download, import
+python -m scripts.kaggle_autopilot                    # submit, poll, download, import (hourly; --interval to change)
 python -m scripts.upload_course_data                  # private dataset per account, then remove `hold`
-python -m scripts.validate_results
+python -m scripts.validate_results                    # checks every manifest artifact and receipt exists
+python -m scripts.collect_results                     # tables, figures and annotation sheet in report/generated/
 ```
 
 The autopilot submits private notebooks only. Before submitting it checks two things:
 - **Concurrency:** at most 2 GPU jobs and 1 CPU job per account.
 - **Weekly quota:** the job's estimated hours must fit under the account's `weekly_gpu_hours`.
 
-When a job finishes, the autopilot imports `outputs/`, `results/` and `manifests/` and writes a receipt to `results/jobs/<run>.json`. A failed session keeps its recovery files. To resume it, rebuild it with `kaggle_runner build <run> --username U --resume-kernel U/<slug> --attempt 2`.
+When a job finishes, the autopilot imports `outputs/`, `results/` and `manifests/` and writes a receipt to `results/jobs/<run>.json`. A failed session keeps its recovery files, and there are two ways to resume it:
+- **After a timeout:** rebuild with `kaggle_runner build <run> --username U --resume-kernel U/<slug> --attempt 2`.
+- **After an error:** Kaggle will not mount an errored notebook as a source. Instead, `kaggle_runner stage-resume <run> U/<slug> --attempt 2` copies its outputs into a private dataset. Then add an entry to `kaggle_jobs/autopilot/retries.json` with `attempt`, `resume_dataset`, and `resume_source` (the old snapshot's sha256, needed when only non-training code changed). The autopilot resubmits it on the owning account.
 
 Large intermediates live under `remote/` and are deleted after a job succeeds: FP16 full-model snapshots, cached features, images, and recovery checkpoints. Checkpoint sizes are recorded in each `run.json`.
 
